@@ -1,0 +1,24 @@
+--Create a grocery store database
+
+CREATE TABLE Groceries (id INTEGER, category TEXT, name TEXT, aisle INTEGER, price INTEGER);
+SELECT * FROM Groceries;
+
+INSERT INTO groceries VALUES (1, "fruits", "bananas", 1, .25);
+INSERT INTO groceries VALUES (2, "fruits", "apples", 1, .75);
+INSERT INTO groceries VALUES (3, "fruits", "oranges", 1, .50);
+INSERT INTO groceries VALUES (4, "fruits", "pears", 1, .75);
+INSERT INTO groceries VALUES (5, "vegetables", "kale", 2, 2.50);
+INSERT INTO groceries VALUES (6, "vegetables", "lettuce", 2, 2.00);
+INSERT INTO groceries VALUES (7, "vegetables", "zuchinni", 2, 1.50);
+INSERT INTO groceries VALUES (10, "vegetables", "tomatoes", 2, .75);
+INSERT INTO groceries VALUES (11, "pantry", "beans", 3, 2.00);
+INSERT INTO groceries VALUES (12, "pantry", "rice", 3, 1.50);
+INSERT INTO groceries VALUES (13, "pantry", "pasta", 3, 2.50);
+INSERT INTO groceries VALUES (14, "bakery", "bread", 4, 3.00); 
+INSERT INTO groceries VALUES (15, "bakery", "tortillas",4, 3.00); 
+
+--Display the database ordered by price
+SELECT * From groceries ORDER BY price;
+
+--What is the highest priced item in the database?
+SELECT MAX(price) FROM groceries; 
