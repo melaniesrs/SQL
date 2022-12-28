@@ -1,0 +1,41 @@
+/**In this project, you’re going to make your own table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists. Contains at least two tables with at least 15 rows total. One of the tables contains a column that relates to the primary key of another table. Has at least one query that does a JOIN.*/
+
+CREATE TABLE richest_people 
+(id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER);
+    
+INSERT INTO richest_people (fullname, age) VALUES
+("Bernard Arnault", 73),
+("Elon Musk", 51),
+("Gautam Adani", 60),
+("Bill Gates", 67), 
+("Jeff Bezos", 58),
+("Warren Buffet", 92),
+("Larry Ellison", 78), 
+("Mukesh Ambani", 65),
+("Steve Ballmer", 66),
+("Larry Page", 49);
+
+
+CREATE table wealth 
+    (person_id INTEGER PRIMARY KEY AUTOINCREMENT, networth_in_billions INTEGER, company_name TEXT);
+    
+INSERT INTO wealth (networth_in_billions, company_name) VALUES
+
+(172.9, "LVMH"),
+(168.5, "Tesla"),
+(125, "Adani Group"),
+(115, "Microsoft"),
+(114, "Amazon"),
+(108, "Berkshire Hathawawy"),
+(93.7, "Oracle"),
+(89.6, "Reliance Industries"),
+(89.3, "Los Angeles Clippers"),
+(86.9, "Alphabet"); 
+
+
+/*What is the networth of the 10 richest people in the world? */
+
+SELECT richest_people.fullname, wealth.networth_in_billions
+FROM richest_people
+JOIN wealth
+ON richest_people.id = wealth.person_id;
